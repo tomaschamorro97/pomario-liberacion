@@ -16,10 +16,7 @@ jobs:
   
     steps:
     
-    - name: tryPyzbar
-      run: apt-get update && \
-          apt-get install -y build-essential libzbar-dev && \
-          pip install zbar
+    
     
     - uses: actions/checkout@v2
     - name: env variable
@@ -40,6 +37,9 @@ jobs:
       
     - name: install zbar2
       run: pip install pyzbar[scripts]
+      
+    - name: tryPyzbar
+      run: apt-get install zbar-tools
 
     - name: Install dependencies
       run: pip install -r requirements.txt
