@@ -9,7 +9,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 import urllib.request
-from pyzbar import pyzbar
+from pyzbar.pyzbar import decode
 import cv2
 import datetime
 
@@ -323,7 +323,7 @@ def gen(camera):
             print('stop stream')
             break
         barcode_info = ""
-        barcodes = pyzbar.decode(frame2)
+        barcodes = decode(frame2)
         for barcode in barcodes:
             x, y , w, h = barcode.rect
             #1
