@@ -44,7 +44,7 @@ jobs:
     - name: tryPyzbar2
       run: sudo apt-get install libzbar-dev
       
-    - name: tryPyzbar2
+    - name: tryPyzbar3
       run: pip install zbar
       
 
