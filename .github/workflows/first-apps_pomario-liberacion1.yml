@@ -40,6 +40,13 @@ jobs:
       
     - name: tryPyzbar
       run: sudo apt-get install zbar-tools
+    
+    - name: tryPyzbar2
+      run: sudo apt-get install libzbar
+      
+    - name: tryPyzbar2
+      run: pip install zbar
+      
 
     - name: Install dependencies
       run: pip install -r requirements.txt
