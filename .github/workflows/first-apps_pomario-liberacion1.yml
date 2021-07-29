@@ -39,7 +39,7 @@ jobs:
       run: pip install pyzbar[scripts]
       
     - name: tryPyzbar
-      run: apt-get install zbar-tools
+      run: sudo apt-get install zbar-tools
 
     - name: Install dependencies
       run: pip install -r requirements.txt
