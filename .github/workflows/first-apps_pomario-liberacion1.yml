@@ -28,7 +28,7 @@ jobs:
         source venv/bin/activate
         
     - name: install zbar 
-      run: pip install libzbar0
+      run: apt install libzbar0
 
     - name: Install dependencies
       run: pip install -r requirements.txt
