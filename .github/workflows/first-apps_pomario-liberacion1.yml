@@ -29,7 +29,7 @@ jobs:
         
     - name: install zbar 
       run: sudo apt-get install libzbar0
-           pip install pyzbar
+           pip install pyzba[scripts]
 
     - name: Install dependencies
       run: pip install -r requirements.txt
