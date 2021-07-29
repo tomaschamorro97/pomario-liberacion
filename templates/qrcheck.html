@@ -1,0 +1,27 @@
+<html>
+  <head>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  
+  <body>
+      <img id="cam" src="{{ url_for('video_feed') }}">
+      <script>
+            var intervalId = window.setInterval(function(){
+                $.getJSON('/is_decoded/', function(data){
+                    if(data['is_decoded'] == true) {
+                        
+                        if(data['barcode_info'] == ""){
+                            window.location.href="/notDetected"
+                            alert("No se ha detectado ningun producto. Favor volver a intentar");
+                            clearInterval(intervalId); // stop checking it
+                        } else {
+                            window.location.href="/qrdetected"
+                            alert("Se detectó el producto con código: " + data['barcode_info']);
+                            clearInterval(intervalId);  // stop checking it
+                        }
+                    };
+                })
+            }, 500);  // 500ms = 0.5s 
+      </script>
+  </body>
+</html>
