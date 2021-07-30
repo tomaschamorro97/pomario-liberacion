@@ -30,6 +30,9 @@ jobs:
 
     - name: Install dependencies
       run: pip install -r requirements.txt
+    
+    - name: Correct path
+      run: export ZBAR_PATH=/path/to/libzbar.so
 
     # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
