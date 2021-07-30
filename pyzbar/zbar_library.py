@@ -64,7 +64,7 @@ def load():
         if not path:
             path = os.environ.get('ZBAR_PATH')
             if not path:
-                raise ImportError('Unable to find zbar shared library')
+                raise ImportError('Unable to find zbar shared library sapo hpta')
         libzbar = cdll.LoadLibrary(path)
         dependencies = []
 
