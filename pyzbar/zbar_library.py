@@ -60,14 +60,12 @@ def load():
             dependencies, libzbar = load_objects(Path(__file__).parent)
     else:
         # Assume a shared library on the path
-        #path = find_library('/usr/local/bin/libzbar.so')
-        path = '/usr/local/bin/pyzbar/libzbar.so'
-        #if not path:
-        #   path = 'libzbar.so'
-        #try:
-        #    libzbar = CDLL(path)
-        #except OSError:
-        #    raise ImportError('Unable to find zbar shared library sapo hpta-')
+        path = os.getenv('ZBAR_PATH')
+        #path = '/usr/local/bin/pyzbar/libzbar.so'
+        if not path:
+            path = find_library('zbar')
+            if not path:
+                raise ImportError('Unable to find zbar shared library-')
         libzbar = cdll.LoadLibrary(path)
         dependencies = []
 
