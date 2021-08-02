@@ -3,7 +3,7 @@
 import platform
 import sys
 
-from ctypes import cdll
+from ctypes import cdll, CDLL
 from ctypes.util import find_library
 from pathlib import Path
 import os
@@ -62,10 +62,11 @@ def load():
         # Assume a shared library on the path
         path = find_library('zbar')
         if not path:
-            path = os.environ.get('ZBAR_PATH')
-            if not path:
-                raise ImportError('Unable to find zbar shared library sapo hpta-1')
-        libzbar = cdll.LoadLibrary(path)
+            path = 'libzbar.so'
+        try:
+            libzbar = CDLL(path)
+        except OSError:
+            raise ImportError('Unable to find zbar shared library sapo hpta-1')
         dependencies = []
 
     return libzbar, dependencies
