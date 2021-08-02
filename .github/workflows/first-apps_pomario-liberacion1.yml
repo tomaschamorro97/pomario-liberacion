@@ -38,7 +38,7 @@ jobs:
       run: sudo apt-get install libzbar-dev
       
     - name: Install zbar2
-      run: sudo pip install zbar
+      run: sudo apt-get install python-qrtools
 
     # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
