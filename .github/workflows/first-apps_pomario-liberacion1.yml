@@ -40,6 +40,9 @@ jobs:
     - name: Show path
       run: sudo apt-get install libzbar0
       
+    - name: Print env
+      run: printenv
+      
 
     # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
