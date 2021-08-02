@@ -62,7 +62,7 @@ def load():
         # Assume a shared library on the path
         path = find_library('zbar')
         if not path:
-            path = 'libzbar.so'
+            path = 'libzbar.so0'
         try:
             libzbar = CDLL(path)
         except OSError:
