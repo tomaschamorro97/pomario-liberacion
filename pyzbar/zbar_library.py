@@ -61,7 +61,7 @@ def load():
     else:
         # Assume a shared library on the path
         #path = find_library('/usr/local/bin/libzbar.so')
-        path = '/usr/local/bin/libzbar.so'
+        path = '/usr/local/bin/pyzbar/libzbar.so'
         #if not path:
         #   path = 'libzbar.so'
         #try:
