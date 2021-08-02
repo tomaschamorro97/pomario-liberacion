@@ -38,7 +38,7 @@ jobs:
       run: sudo apt-get install libzbar-dev
     
     - name: Show path
-      run: echo $LD_LIBRARY_PATH
+      run: $ echo $LD_LIBRARY_PATH 
       
 
     # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
