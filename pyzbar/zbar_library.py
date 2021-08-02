@@ -66,7 +66,7 @@ def load():
         try:
             libzbar = CDLL(path)
         except OSError:
-            raise ImportError('Unable to find zbar shared library sapo hpta-1')
+            raise ImportError('Unable to find zbar shared library sapo hpta-')
         dependencies = []
 
     return libzbar, dependencies
