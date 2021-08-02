@@ -60,7 +60,7 @@ def load():
             dependencies, libzbar = load_objects(Path(__file__).parent)
     else:
         # Assume a shared library on the path
-        path = find_library('libzbar')
+        path = '/app/.apt/usr/lib/x86_64-linux-gnu/libzbar.so'
         if not path:
             path = os.environ.get('ZBAR_PATH')
             if not path:
