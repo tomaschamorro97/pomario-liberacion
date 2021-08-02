@@ -38,7 +38,7 @@ jobs:
       run: sudo apt-get install libzbar-dev
     
     - name: Show path
-      run: sudo apt-get install libzbar
+      run: sudo apt-get install libzbar0
       
 
     # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
