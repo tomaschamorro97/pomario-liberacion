@@ -34,8 +34,11 @@ jobs:
     - name: Correct path
       run: export ZBAR_PATH=/path/to/libzbar.so
       
-    - name: Install zbar
-      run: sudo apt-get install libzbar0
+    - name: Install zbar2
+      run: sudo apt-get install libzbar-dev
+      
+    - name: Install zbar2
+      run: sudo pip install zbar
 
     # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
